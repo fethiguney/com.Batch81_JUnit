@@ -39,10 +39,6 @@ public class C02_BeforeAfter {
         //1 defa da after methodu çalışır
     }
 
-    @After
-    //After notasyonu her testten sonra çalışır
-    public void tearDown() {
-        driver.close();
-    }
+
 
 }
