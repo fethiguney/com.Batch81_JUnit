@@ -46,12 +46,13 @@ public class C04_CheckBox {
         if (!checkbox2.isSelected()) {
             checkbox2.click();
         }
-
     }
 
     public void tearDown() {
         driver.close();
     }
+
+
 
 
 }
