@@ -1,10 +1,7 @@
 package day06;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.BeforeClass;
-import org.junit.Test;
+import org.junit.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -44,17 +41,18 @@ public class C05_InValid_EMailTest {
         //bastigimizda “Invalid email address” uyarisi ciktigini teste delim
         driver.findElement(By.xpath("(//*[@type='text'])[2]")).sendKeys("testgmail.com");
         driver.findElement(By.xpath("(//*[@type='submit'])[2]")).click();
-        String alertMessage=driver.findElement(By.id("create_account_error")).getText();
-        System.out.println(alertMessage);
+        String alertMessage=driver.findElement(By.xpath("//*[text()='Invalid email address.']")).getText();
+        String expectedMessage="Invalid email address.";
+        Assert.assertEquals(alertMessage, expectedMessage);
 
 
 
     }
 
-   /*@AfterClass
+   @AfterClass
     public static void tearDown(){
        driver.close();
-   }*/
+   }
 
 
 
