@@ -29,7 +29,8 @@ public class C01_MavenIlkTest {
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
 
-        //https://www.amazon.com/ sayfasina gidelim
+
+      //https://www.amazon.com/ sayfasina gidelim
         driver.get("https://www.amazon.com");
 
         //arama kutusunu locate edelim
