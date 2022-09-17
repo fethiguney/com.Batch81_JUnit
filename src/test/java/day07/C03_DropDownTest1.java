@@ -12,7 +12,7 @@ import org.openqa.selenium.support.ui.Select;
 import java.time.Duration;
 import java.util.List;
 
-public class C03_DropdownTest {
+public class C03_DropDownTest1 {
     /*
     Bir class oluşturun: DropDown
     https://the-internet.herokuapp.com/dropdown adresine gidin.
@@ -68,6 +68,7 @@ public class C03_DropdownTest {
             System.out.println("False");
         }
 
+        driver.close();
 
     }
 
