@@ -36,10 +36,11 @@ public class C03_DropdownTest {
     @Test
     public void test1(){
         //Index kullanarak Seçenek 1’i (Option 1) seçin ve yazdırın
-        WebElement ddm=driver.findElement(By.xpath("//*[@id='dropdown']"));
-        Select option=new Select(ddm);
+        WebElement dropDownMenu=driver.findElement(By.xpath("//*[@id='dropdown']"));
+        Select option=new Select(dropDownMenu);
         option.selectByIndex(1);
         System.out.println(option.getFirstSelectedOption().getText());
+        System.out.println(option.getOptions().get(1).getText());
 
         //Value kullanarak Seçenek 2'yi (Option 2) seçin ve yazdırın
         option.selectByValue("2");
@@ -49,18 +50,24 @@ public class C03_DropdownTest {
         option.selectByVisibleText("Option 1");
         System.out.println(option.getFirstSelectedOption().getText());
 
+
         //Tüm dropdown değerleri(value) yazdırın
         List<WebElement> ddmList=option.getOptions();
-        ddmList.stream().map(WebElement::getText).forEach(System.out::println);
+        for (WebElement w:ddmList) {
+            System.out.println(w.getText());
+        }
 
         //Dropdown’un boyutunu bulun,
         // Dropdown’da 4 öğe varsa konsolda True , degilse
         //False yazdırın.
-        if (ddmList.size()==4) {
+        int ddmNumber=ddmList.size();
+        int a=4;
+        if (ddmNumber==a){
             System.out.println("True");
         } else {
             System.out.println("False");
         }
+
 
     }
 
