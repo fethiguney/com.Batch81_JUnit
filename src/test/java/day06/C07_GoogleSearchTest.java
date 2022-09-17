@@ -48,15 +48,15 @@ public class C07_GoogleSearchTest {
         System.out.println("Bulunan sonuc sayisi : "+result[1]);
     }
 
-    /*@Test
+    @Test
     public void test4(){
     //sonuc sayisinin 10 milyon’dan fazla oldugunu test edin
         String [] result=driver.findElement(By.xpath("//*[@id='result-stats']")).getText().split(" ");
-        String resultNumber=result[1];
+        String resultNumber=result[1].replaceAll("\\D", "");
         int numberOfResult=Integer.valueOf(resultNumber);
         int comparingNumber=10000000;
         Assert.assertTrue(numberOfResult>comparingNumber);
-    }*/
+    }
 
     @AfterClass
     public static void tearDown(){

@@ -38,40 +38,46 @@ public class C08_AddToCartTest {
         driver.get("https://www.saucedemo.com");
     }
     @Test
-    public void test1(){
+    public void test1() throws InterruptedException {
         //Username kutusuna “standard_user”yazdirin
+        Thread.sleep(2000);
         driver.findElement(By.id("user-name")).sendKeys("standard_user");
     }
 
     @Test
-    public void test2(){
+    public void test2() throws InterruptedException {
         //Password kutusuna “secret_sauce”yazdirin
+        Thread.sleep(2000);
         driver.findElement(By.xpath("//*[@id='password']")).sendKeys("secret_sauce");
     }
 
     @Test
-    public void test3(){
+    public void test3() throws InterruptedException {
         //Login tusuna basin
+        Thread.sleep(1000);
         driver.findElement(By.id("login-button")).click();
     }
 
     @Test
-    public void test4(){
+    public void test4() throws InterruptedException {
         //Ilk urunun ismini kaydedin ve bu urunun sayfasina gidin
+        Thread.sleep(1000);
         WebElement firstProduct=driver.findElement(By.xpath("(//*[@class='inventory_item_name'])[1]"));
         System.out.println("Ilk urun ismi : "+firstProduct.getText());
         firstProduct.click();
     }
 
     @Test
-    public void test5(){
+    public void test5() throws InterruptedException {
         //Add to Cart butonuna basin
+        Thread.sleep(1000);
         driver.findElement(By.id("add-to-cart-sauce-labs-backpack")).click();
     }
 
     @Test
-    public void test6(){
+    public void test6() throws InterruptedException {
         //Alisveris sepetine tiklayin
+        Thread.sleep(1000);
         driver.findElement(By.xpath("//*[@class='shopping_cart_link']")).click();
     }
 
