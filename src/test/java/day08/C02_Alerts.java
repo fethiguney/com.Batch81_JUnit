@@ -46,8 +46,9 @@ public class C02_Alerts {
     ve result mesajının  “You successfully clicked an alert”
     oldugunu test edin.
          */
-    driver.findElement(By.xpath("//*[@onclick='jsAlert()']")).click();
+    WebElement alert1=driver.findElement(By.xpath("//*[@onclick='jsAlert()']"));
     Thread.sleep(2000);
+    alert1.click();
     driver.switchTo().alert().accept();
     WebElement message=driver.findElement(By.xpath("//*[@id='result']"));
         System.out.println("Birinci mesaj : "+message.getText());

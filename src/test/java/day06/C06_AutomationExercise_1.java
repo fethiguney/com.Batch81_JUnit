@@ -73,7 +73,7 @@ public class C06_AutomationExercise_1 {
         driver.findElement(By.xpath("//*[@type='text']")).
                 sendKeys("username");
         driver.findElement(By.xpath("(//*[@type='email'])[2]")).
-                sendKeys("newusertest123456@gmail.com");
+                sendKeys("newusertest1234567@gmail.com");
     }
 
     @Test
