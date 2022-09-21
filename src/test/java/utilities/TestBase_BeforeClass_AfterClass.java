@@ -2,16 +2,19 @@ package utilities;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.After;
+import org.junit.AfterClass;
 import org.junit.Before;
+import org.junit.BeforeClass;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.time.Duration;
 
 public class TestBase_BeforeClass_AfterClass {
+
     protected static WebDriver driver;
 
-    @Before
+    @BeforeClass
     public static void setUp(){
         WebDriverManager.chromedriver().setup();
         driver=new ChromeDriver();
@@ -20,7 +23,7 @@ public class TestBase_BeforeClass_AfterClass {
 
     }
 
-    @After
+    @AfterClass
     public static void tearDown(){
         //driver.quit();
     }
