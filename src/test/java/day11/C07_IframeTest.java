@@ -1,8 +1,11 @@
 package day11;
 
+import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import utilities.TestBase_Before_After;
 
 import java.util.ArrayList;
@@ -17,6 +20,9 @@ public class C07_IframeTest extends TestBase_Before_After {
         driver.get("https://html.com/tags/iframe");
 
         // video'yu gorecek kadar asagi inin
+        Actions actions=new Actions(driver);
+        actions.sendKeys(Keys.PAGE_UP).sendKeys(Keys.PAGE_UP).perform();
+
         List<WebElement> iframeList=new ArrayList<>(driver.findElements(By.xpath("//iframe")));
         driver.switchTo().frame(iframeList.get(0));
 
@@ -25,7 +31,8 @@ public class C07_IframeTest extends TestBase_Before_After {
         video.click();
 
         //videoyu calistirdiginizi test edin
-
+        WebElement altyazı=driver.findElement(By.xpath("//*[@title='Altyazılar (c)']"));
+        Assert.assertTrue(altyazı.isDisplayed());
 
     }
 }
