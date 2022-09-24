@@ -3,7 +3,11 @@ package day12;
 import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.By;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import utilities.TestBase_Before_After;
+
+import java.time.Duration;
 
 public class C04_ActionsClassTest extends TestBase_Before_After {
 
@@ -23,6 +27,9 @@ public class C04_ActionsClassTest extends TestBase_Before_After {
         driver.findElement(By.xpath("(//*[@class='sub-heading'])[2]")).click();
 
         //4.Popup mesajini yazdirin
+
+        WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//h4")));
 
         System.out.println(driver.findElement(By.xpath("//h4")).getText());
 
