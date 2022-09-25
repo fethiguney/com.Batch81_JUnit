@@ -23,7 +23,7 @@ public class C03_WebTables extends TestBase_Before_After {
         WebElement cell=driver.findElement(By.xpath("//tbody//tr["+satir+"]//td["+sutun+"]"));
         System.out.println("Istenilen sutun ve satirdaki text : "+cell.getText());
         //price basligindaki tum numaraları yazdirin
-        List<WebElement> priceColumn=driver.findElements(By.xpath("//tbody//tr//td[6]"));
+        List<WebElement> priceColumn=driver.findElements(By.xpath("//tbody//td[6]"));
         for (WebElement w: priceColumn) {
             System.out.println(w.getText());
         }
