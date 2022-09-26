@@ -7,10 +7,16 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.time.Duration;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 public abstract class TestBase_Before_After {
 
     protected WebDriver driver;
+
+    LocalDateTime date=LocalDateTime.now();
+    DateTimeFormatter formatter=DateTimeFormatter.ofPattern("YYYYMMddhhmmss");
+    protected String tarih=date.format(formatter);
 
     @Before
     public void setUp(){
