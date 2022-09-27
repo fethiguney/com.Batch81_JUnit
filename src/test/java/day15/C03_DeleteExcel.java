@@ -38,7 +38,7 @@ public class C03_DeleteExcel {
 
         //-Silindiğini test edin
 
-        Assert.assertTrue(workbook.getSheet("Sayfa1").getRow(3).getCell(3).toString().equals(null));
+        Assert.assertNull(workbook.getSheet("Sayfa1").getRow(3).getCell(3).toString());
 
 
     }
