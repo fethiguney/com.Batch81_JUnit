@@ -5,12 +5,11 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import utilities.TestBase_Before_After;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class C04 extends TestBase_Before_After {
+public class C04_FillFormWithLoop extends TestBase_Before_After {
 
 
     @Test

@@ -3,11 +3,10 @@ package Practice;
 import org.junit.Assert;
 import org.junit.Test;
 
-import java.io.FileInputStream;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
-public class C05 {
+public class C05_FileExists {
 
 
     @Test
